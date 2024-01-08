@@ -1,6 +1,6 @@
 import express, { Express, Request, Response } from "express";
 import dotenv from "dotenv";
-import { cors } from 'cors';
+import  cors  from 'cors';
 import { logError, logNormal, logSuccess } from "./utils/helpers";
 
 const PORT = 5000;
@@ -13,7 +13,7 @@ const startServer = async () => {
   const allowedOrigins = ['http://localhost:3000','https://studio.apollographql.com'];
   const corsOptions = {
     credentials: true,
-    origin: function (origin: string, callback:any) {
+    origin: function (origin: any, callback:any) {
       if (!origin) return callback(null, true);
       if (allowedOrigins.indexOf(origin) === -1) {
         var msg = 'The CORS policy for this site does not ' +
